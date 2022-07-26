@@ -268,7 +268,7 @@ export default styled
  *
  * type ThemeType = typeof Theme;
  *
- * declare module "vue-styled-components" {
+ * declare module "vue3-styled-components" {
  *  export interface DefaultTheme extends ThemeType {}
  * }
  * ```

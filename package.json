@@ -1,14 +1,14 @@
 {
-  "name": "vue-styled-components",
+  "name": "@magister_zito/vue3-styled-components",
   "version": "2.0.0",
-  "description": "Visual primitives for the component age. A simple port of styled-components 💅 for Vue",
+  "description": "Visual primitives for the component age. A simple port of styled-components 💅 for Vue 3",
   "main": "lib/index.js",
-  "module": "dist/vue-styled-components.es.js",
+  "module": "dist/vue3-styled-components.es.js",
   "types": "dist/index.d.ts",
-  "author": "Lorenzo Girardi",
+  "author": "Lorenzo Girardi, Matthew Zito",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/styled-components/vue-styled-components/issues"
+    "url": "https://github.com/MatthewZito/vue3-styled-components/issues"
   },
   "scripts": {
     "build": "npm run build:lib && npm run build:dist",
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/styled-components/vue-styled-components.git"
+    "url": "git+https://github.com/MatthewZito/vue3-styled-components.git"
   },
   "keywords": [
     "vue",

@@ -26,7 +26,7 @@ const prodOutput = [
   {
     exports,
     globals,
-    file: 'dist/vue-styled-components.min.js',
+    file: 'dist/vue3-styled-components.min.js',
     format: 'umd',
     name: moduleName
   }
@@ -36,14 +36,14 @@ const devOutput = [
   {
     exports,
     globals,
-    file: 'dist/vue-styled-components.js',
+    file: 'dist/vue3-styled-components.js',
     format: 'umd',
     name: moduleName
   },
   {
     exports,
     globals,
-    file: 'dist/vue-styled-components.es.js',
+    file: 'dist/vue3-styled-components.es.js',
     format: 'es',
     name: moduleName
   }
