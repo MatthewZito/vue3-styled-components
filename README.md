@@ -1,13 +1,15 @@
-# vue-styled-components
+# vue3-styled-components
 
 > Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅
 
+**Note: This is a fork of Lorenzo Girardi's `vue-styled-components` with full-parity support for Vue 3.**
+
 ## Support
 
-> This version is compatible with Vue 2.x
+> This version is compatible with Vue 3.x
 
 ```
-yarn add vue-styled-components
+pnpm add @magister_zito/vue3-styled-components
 ```
 
 Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
@@ -16,27 +18,14 @@ Utilising tagged template literals (a recent addition to JavaScript) and the pow
 
 ## Usage
 
-> Register first your component locally (see https://vuejs.org/v2/guide/components.html#Local-Registration)
-
-```
-  new Vue({
-    // ...
-    components {
-      'styled-title': StyledTitle
-    },
-    template: '<styled-title> Hello! </styled-title>'
-  }
-```
-
 ### Basic
 
 > Do not use built-in or reserved HTML elements as component id (title, button, input...).
 
-
 This creates two Vue components, `<StyledTitle>` and `<Wrapper>`:
 
 ```JS
-import styled from 'vue-styled-components';
+import styled from '@magister_zito/vue3-styled-components';
 
 // Create a <StyledTitle> Vue component that renders an <h1> which is
 // centered, palevioletred and sized at 1.5em
@@ -68,7 +57,7 @@ You render them like so:
 Styled components pass on all their props. This is a styled `<input>`:
 
 ```JS
-import styled from 'vue-styled-components';
+import styled from '@magister_zito/vue3-styled-components';
 
 // Create an <StyledInput> component that'll render an <input> tag with some styles
 const StyledInput = styled.input`
@@ -91,13 +80,14 @@ You can just pass a `placeholder` prop into the `styled-component`. It will pass
 // Render a styled input with a placeholder of "@liqueflies"
 <styled-input placeholder="@liqueflies" type="text" />
 ```
+
 ### Adapting based on props
 
 This is a button component that has a `primary` state. By setting `primary` to `true` when rendering it we adjust the background and text color.
 
 ### Important
 
-> A prop is a custom attribute for passing information from parent components. A child component needs to explicitly declare the props it expects to receive using the props option, you must define your prop before, and of course, get benefits of validation! (see https://vuejs.org/v2/guide/components.html#Passing-Data-with-Props)
+> A prop is a custom attribute for passing information from parent components. A child component needs to explicitly declare the props it expects to receive using the props option, you must define your prop before, and of course, get benefits of validation! (see https://vuejs.org/guide/components/props.html#props)
 
 ```
 {
@@ -109,7 +99,7 @@ This is a button component that has a `primary` state. By setting `primary` to `
 ```
 
 ```JSX
-import styled from 'vue-styled-components';
+import styled from '@magister_zito/vue3-styled-components';
 
 const btnProps = { primary: Boolean };
 
@@ -136,7 +126,7 @@ export default StyledButton;
 Taking the `StyledButton` component from above and removing the primary rules, this is what we're left with – just a normal button:
 
 ```JSX
-import styled from 'vue-styled-components';
+import styled from '@magister_zito/vue3-styled-components';
 
 const StyledButton = styled.button`
   background: white;
@@ -153,14 +143,14 @@ export default StyledButton;
 
 ### Theming
 
-`vue-styled-components` has full theming support by exporting a `<ThemeProvider>` wrapper component. This component provides a theme to all `Vue` components underneath itself via the context API. In the render tree all `vue-styled-components` will have access to the provided theme, even when they are multiple levels deep.
+`vue3-styled-components` has full theming support by exporting a `<ThemeProvider>` wrapper component. This component provides a theme to all `Vue` components underneath itself via the context API. In the render tree all `vue3-styled-components` will have access to the provided theme, even when they are multiple levels deep.
 
 Remember to register `ThemeProvider` locally.
 
 ```JSX
-  import {ThemeProvider} from 'vue-styled-components'
+  import {ThemeProvider} from '@magister_zito/vue3-styled-components'
 
-  new Vue({
+  createApp({
     // ...
     components: {
       'theme-provider': ThemeProvider
@@ -195,7 +185,7 @@ And into your `Wrapper` component:
 You can style also Vue component constructors as `router-link` from `vue-router` and other components
 
 ```JSX
-import styled from 'vue-styled-components';
+import styled from '@magister_zito/vue3-styled-components';
 
 // unfortunately you can't import directly router-link, you have to retrieve contstructor
 const RouterLink = Vue.component('router-link')
@@ -269,7 +259,7 @@ A helper method to write global CSS. Does not return a component, adds the style
 ```JS
 // global-styles.js
 
-import { injectGlobal } from 'vue-styled-components';
+import { injectGlobal } from '@magister_zito/vue3-styled-components';
 
 injectGlobal`
 	@font-face {
