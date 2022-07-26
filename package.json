@@ -10,6 +10,9 @@
   "bugs": {
     "url": "https://github.com/MatthewZito/vue3-styled-components/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "npm run build:lib && npm run build:dist",
     "prebuild:lib": "rm -rf lib/*",
